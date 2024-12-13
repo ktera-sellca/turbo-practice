@@ -3,11 +3,13 @@ name: Code quality
 on:
   push:
   pull_request:
-    paths: ["apps/**"]
+    paths:
+      - "apps/**"
 
 jobs:
-  quality:
+  front-quality:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - name: Checkout
         uses: actions/checkout@v4
